@@ -1,0 +1,91 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name = "viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+	<link type="text/css" rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+{% extends "base.html" %}
+{% block content %}
+<div class="hero">
+
+	<h2>Learn something new this week</h2>
+	<div class="hline"></div>
+	<p>FRIDAYS 12-2PM<br>GOLISANO 1400</p>
+
+
+
+</div>
+
+<div class="second">
+<div class="text">
+	<h3>With an	<br>amazing community<br>that cares about you</h3>
+	</div>
+
+	<div class="terminal">
+            <div class="bar">
+		<p>Terminal - friend@rc3.club: /var/www</p>
+	    </div>
+            <div class="window">
+                <span class="bash"> $ </span> cat Manifesto.txt <br>> RC3 is a student-run organization dedicated to educating and preparing RIT students to compete in security-related competitions, as well as showcasing RIT student talent in the current world of security today. <br> > Whether you're new to competitive cybersecurity or a veteran, RC3 has a place for you.<br> > We believe security is for anyone who wants to learn and center our activities around live individual and team-based security exercises covering a wide variety of areas in computing security, including penetration testing, Windows and Linux server hardening, web security, network services, and more! <br>
+            </div>
+        </div> <!--terminal end-->
+</div><!--end of second-->
+
+<div class="third">
+<div class="container">
+	<div class="text-container">
+	<h3>That challenges you</h3>
+	<p>We're all about the competitions. Capture the Flag in the Fall, and Attack and Defend in the Spring. So if you think
+	you have what it takes, come show us what you got.</p>
+</div>
+	<div class="flex-container">
+		<div class="ctf">
+        <div class="blurb">
+           <p>Capture the Flag</p>
+          <hr>
+          <h2>RC3 CTF</h2>
+          <p>In the Fall, we host an awesome Capture the Flag competition with challenges created by our executive board, alumni advisors, and company sponsors!<br>Sign up with your team of up to 5 students to participate and earn some crazy prizes! </p>
+          <a class="seemore" href="/competitions/ctf" >Tell Me More</a>
+				</div>
+        </div>
+        <div class="irsec">
+          <div class="blurb">
+              <p>Attack/Defend</p>
+              <hr>
+              <h2>IRSeC</h2>
+              <p>The Incident Responsive Security Competition is our beginner friendly wargame where we invite seasoned penetration testers to come pwn your boxes. The best way to learn is a trial by fire, so strap on your blue team helmets, it's time to go to war.<p>
+            	<a class="seemore" href="/competitions/irsec">Tell Me More</a>
+            	</p>
+					</div>
+			 </div>
+	</div>
+</div>
+</div> <!--end of third -->
+
+<div id="sponsor-logos">
+  <a class="sponsor-logo-link" href="/sponsors">
+    <span class="button">Our Awesome Sponsors</span>
+    <ul class="list">
+          <li><img alt="covermymeds" src="https://www.covermymeds.com/main/wp-content/themes/mana-child/images/CoverMyMeds_Logo.png">
+	</li><li><img alt="keyw" src="https://www.keywcorp.com/wp-content/uploads/2016/09/KeyW_Logo.png">
+					</li><li><img alt="grimm" src="https://rc3.club/static/img/company_logos/grimm.png">
+
+					</li><li><img alt="SANS" src="https://www.sans.org/images/design-site/logo.png">
+					</li><li><img alt="qocreate" src="https://www.covermymeds.com/main/wp-content/themes/mana-child/images/CoverMyMeds_Logo.png">
+            </li>
+
+					</ul>
+  </a>
+</div>
+
+<div class="fifth">
+<h3>Let's Keep in Touch</h3>
+
+
+</div>
+
+{% endblock %}
+</body>
+</html>

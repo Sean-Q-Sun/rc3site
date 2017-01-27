@@ -1,0 +1,144 @@
+<html>
+<head>
+	{% if title %}
+        <title>{{title}} - RC3</title>
+    {% else %}
+		<title>Welcome to RC3</title>
+	{% endif %}
+
+	<meta charset="UTF-8">
+	<meta name = "viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+
+
+	<link type="text/css" rel="stylesheet" href="/static/css/base.css"/>
+
+
+
+</head>
+
+<body>
+
+<div class="navSmall">
+	<input type="checkbox" id="navcheck" role="button" title="menu">
+	<label for="navcheck" aria-hidden="true" title="menu">
+		<span class="burger">
+			<span class="bar">
+				<span class="visuallyhidden">Menu</span>
+			</span>
+		</span>
+	</label>
+	<nav id="menu">
+		<a href="/sponsors">For Sponsors</a>
+		<a href="/about">About</a>
+		<a href="/this-week">This Week</a>
+		<a href="/community">Community</a>
+		<a href="/competitions">Competitions</a>
+	</nav>
+
+</div> <!--end of navSmall-->
+
+<div class="navBig">
+	<div class="orange">
+		<div class="white">
+			<a href="./"><img class="logo" src="/static/assets/rc3logo.png"></a>
+			<div class="white-space"></div>
+			<nav>
+				<a href="/about" class="about">About</a>
+				<a href="/this-week" class="this-week">This Week</a>
+				<a href="/community" class="community">Community</a>
+				<a href="/competitions" class="competitions">Competitions</a>
+				<span class="line"></span>
+				<a href="#sponsors" class="for-sponsors">For Sponsors</a>
+			</nav>
+		</div>
+
+
+		<a class="login" href="/">Login</a>
+
+	</div>
+</div>
+
+	<div id="sponsors">
+
+		<a class="close" href="#home">X</a>
+		<div class="text">
+			<h3>Hello!</h3>
+			<p class="sponsor-blurb">We wouldn't be where we are without our wonderful sponsors. With your support, we can keep our club running and host exciting events for our members. And of course, we do our best to give back to the people who support us. If you would like to contribute, check out our sponsorship letter!
+			</p>
+
+</div>
+<div class="buttons">
+	<a href="/sponsors">Our Sponsors</a>
+	<a class="cta" href="/letter" target="_blank">Okay!</a>
+</div>
+
+
+	</div>
+
+
+<!--div class="navBig>
+	<div class="orange">
+		<div class="white">
+			<div class="logo-home">
+				<a href="./"><img class="logo" src="/static/assets/rc3logo.png"></a>
+			</div>
+			<nav>
+				<a href="/about" class="about">About</a>
+				<a href="/this-week" class="this-week">This Week</a>
+				<a href="/community" class="community">Community</a>
+				<a href="/competitions" class="competitions">Competitions</a>
+				<span class="line"></span>
+				<a href="/sponsors" class="for-sponsors">For Sponsors</a>
+			</nav>
+		</div>
+		<a class="login" href="#">Login</a>
+	</div>
+</div><!--end of navBig-->
+<main>
+{% block content %}{% endblock %}
+    </main>
+
+<footer>
+	<img class="logo" src="/static/assets/rc3logowhite.png">
+    <div class="footer-links">
+        <div class="footer-link footer-about">
+            <p>ABOUT</p>
+            <a href="/about#history">History</a>
+            <a href="/about#eboard">E-Board</a>
+            <a href="/about">Manifesto</a>
+            <a href="/media">Media Kit</a>
+        </div>
+        <div class="footer-link footer-club">
+            <p>LEGAL</p>
+            <a href="/constitution">Constitution</a>
+            <a href="/privacy-policy">Privacy</a>
+        </div>
+
+        <div class="footer-link footer-visit">
+            <p>CHECK US OUT</p>
+            <a>12:00-2:00PM EST</a>
+            <a>Golisano 2400</a>
+        </div>
+
+
+        <div class="footer-link footer-elsewhere">
+            <p>ELSEWHERE</p>
+            <a>Facebok</a>
+            <a>Youtube</a>
+        </div>
+        <div class="footer-link footer-misc">
+            <p>MISC</p>
+            <a href="/misc/links">Member Sites</a>
+            <a href="/misc/design">Design Choices</a>
+        </div>
+        <div class="footer-link footer-made">
+            <p>Built with &lt;3 <br>by Sean Sun and Jaime Geiger</p>
+        </div>
+    </div>
+
+
+
+
+</footer>
+    </body>
+</html>

@@ -1,0 +1,518 @@
+html{
+	font-family: -apple-system, BlinkMacSystemFont,
+	    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+	    "Fira Sans", "Droid Sans", "Helvetica Neue",
+	    sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  color: black;
+  font: 1em/1.4;
+  margin: 0;
+  background: none;/*#3498db;*/
+}
+
+h1{
+    /*font-size: 5.063em;*/
+
+    font-size: calc(5.063em + 1vw);
+    text-transform: uppercase;
+
+}
+
+h2 {
+    font-size: calc(3.375em + 1vw);
+
+}
+h3 {
+    font-size: calc(2.25em + 1vw);
+    font-weight: 300;
+
+}
+h4, q{
+    font-size: calc(1.5em + 1vw);
+
+}
+p {
+    text-transform: none;
+
+    font-size: calc(1em + .5vw);
+			font-weight: 300;
+}
+a{
+	/*font-family: 'Montserrat', sans-serif;*/
+	color: #565656;
+	text-decoration: none;
+	white-space: nowrap;
+	font-size: calc(1em + .5vw);
+	font-size: 18px;
+}
+
+a:hover{
+	text-decoration: underline;
+
+}
+
+.navBig{
+	position: fixed;
+	z-index: 3;
+}
+.navSmall{
+	display: none;
+	z-index: 4;
+}
+
+/*navSmall css -----------*/
+
+.navSmall input {
+  position: fixed;
+  opacity: 0;
+}
+
+.navSmall label {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.navSmall label::before {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(18, 67, 100, 0.6);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.navSmall label .burger {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 4;
+  width: 2em;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.navSmall label .burger::before,
+.navSmall label .burger .bar, .navSmall label .burger::after {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 12%;
+  background: #555;
+  content: '';
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.navSmall label .burger .bar {
+  top: 44%;
+}
+.navSmall label .burger::before {
+  top: 0;
+  transform-origin: top left;
+}
+.navSmall label .burger::after {
+  bottom: 0;
+  transform-origin: bottom left;
+}
+
+.navSmall input:focus + label .burger,
+ label:hover .burger {
+  opacity: .75;
+}
+
+.navSmall nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translate3d(0, 0, 0);
+  /* material acceleration */
+  transform: translateX(-100%);
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.navSmall nav::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 25em;
+  background: #f36e21;
+  content: '';
+  transform: skewX(0deg) translateX(-100%);
+  transform-origin: bottom left;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+/*
+@media (min-width: 40em) {
+  .navSmall nav::before {
+    width: 20em;
+  }
+}*/
+.navSmall nav a {
+  margin: .5em 0;
+  padding: .2em 2em;
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transform: translateX(-100%);
+  transition: color .15s, transform .5s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.navSmall nav a:nth-child(1) {
+  transition-delay: 0s, 100ms;
+}
+.navSmall nav a:nth-child(2) {
+  transition-delay: 0s, 150ms;
+}
+.navSmall nav a:nth-child(3) {
+  transition-delay: 0s, 200ms;
+}
+.navSmall nav a:nth-child(4) {
+  transition-delay: 0s, 250ms;
+}
+.navSmall nav a:nth-child(5) {
+  transition-delay: 0s, 300ms;
+}
+.navSmall nav a:nth-child(6) {
+  transition-delay: 0s, 350ms;
+}
+
+.navSmall nav a:hover, nav a:focus {
+  text-decoration: underline;
+
+}
+
+[id="navcheck"]:checked + label::before {
+opacity: 2;
+
+  pointer-events: auto;
+}
+[id="navcheck"]:checked + label .burger::before, [id="navcheck"]:checked +  label .burger::after {
+  width: 141.42%;
+}
+[id="navcheck"]:checked + label .burger::before {
+  transform: rotate(45deg) translateY(-50%);
+}
+[id="navcheck"]:checked + label .burger::after {
+  transform: rotate(-45deg) translateY(50%);
+}
+[id="navcheck"]:checked + label .burger .bar {
+  transform: scale(0.1);
+}
+[id="navcheck"]:checked ~ nav {
+  transform: translateX(0);
+}
+[id="navcheck"]:checked ~ nav::before {
+  transform: skewX(0deg) translateX(0);
+}
+[id="navcheck"]:checked ~ nav a {
+  transform: translateX(0);
+}
+[id="navcheck"]:checked ~ main .content {
+  transform: translateX(3em);
+  transform-origin: left center;
+
+}
+
+/* helper */
+.navSmall .visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* navBig css 2.0 */
+
+.navBig .orange{
+	background: #f36e21;
+	display: flex;
+	justify-content: space-between;
+	padding: .3rem;
+	left: 0;
+	right: 0;
+	position: fixed;
+	padding-right: 0;
+
+}
+
+.navBig .white{
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: .7rem;
+	padding-right: 0;
+	width: 95%;
+
+
+}
+.navBig .logo{
+	width: 115px;
+	padding: 0;
+	margin: 0;
+
+}
+
+.navBig .orange .white nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.navBig nav a{
+	padding-right: 1.5rem;
+	white-space: nowrap;
+	color: #555;
+}
+
+.navBig .white-space{
+	flex-grow: 2;
+	width: 1rem;
+}
+
+.navBig .line{
+	width:.1rem;
+	height:1.5rem;
+	background:#565656;
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 1.5rem 0 0;
+}
+
+
+.navBig .orange .login{
+	align-items: center;
+	padding: 0 4.5rem 0 6rem;
+	display: flex;
+	justify-content: space-around;
+	color: white;
+}
+
+#sponsors{
+	z-index: 5;
+	background-color: white;
+	border: 15px solid #f36e21;
+	color: #555;
+	position: fixed;
+	top: 30vh;
+	left: 200vw;
+	width: 40vw;
+	/*height: 30vh;*/
+	transition: all .5s;
+}
+
+#sponsors h3, sponsors p, sponsors a{
+	padding: 0;
+	margin: 0;
+}
+
+#sponsors:target{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	left: 30vw;
+}
+
+
+
+#sponsors .close{
+	color: white;
+position: absolute;
+top: 0;
+right: 0;
+font-size: 1.5rem;
+background: #f36e21;
+padding: .5rem .5rem 1rem 1rem;
+text-decoration: none;
+
+}
+
+#sponsors .text{
+	margin: 0 3%;
+}
+#sponsors .buttons{
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	line-height: 4rem;
+
+}
+
+#sponsors .buttons a{
+	padding: .5rem 3rem;
+}
+
+#sponsors .cta{
+	color: #f36e21;
+	border: 3px solid #f36e21;
+}
+
+#sponsors .cta:hover{
+	color: white;
+	background: #f36e21;
+	text-decoration: none;
+}
+ /*
+.navBig .orange{
+	background: #f36e21;
+	display: flex;
+	justify-content: space-between;
+	padding: .3rem;
+	align-items: center;
+	padding-right: 0;
+	left: 0;
+	right: 0;
+}
+
+.navBig .white{
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .8rem;
+	padding-right: 0rem;
+	left: 0;
+	right: 0;
+}
+
+.navBig nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.navBig nav a{
+	padding-right: 1.5rem;
+	white-space: nowrap;
+	color: #555;
+}
+
+.navBig .line{
+	width:.1rem;
+	height:1.5rem;
+	background:#565656;
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 1rem 0 0;
+}
+
+
+.navBig .logo{
+	width: 10%;
+    min-width: 115px;
+    max-width: 800px;
+
+}
+
+.navBig .login{
+	margin: 0 auto;
+	color: white;
+	padding: 0 5rem 0 6rem;
+}
+
+*/
+/*Sometimes you just gotta make things beautiful*/
+
+/*footer css---------*/
+
+footer{
+    display: flex;
+    color: white;
+    background-color: #555;
+    justify-content: space-around;
+    padding: 5rem 2rem;
+    flex-wrap: wrap;
+}
+
+footer a, footer p{
+	color: white;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+footer .logo{
+    width: 100px;
+	margin: 30px;
+    align-self: center;
+}
+
+footer .footer-links{
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+   /* justify-content: flex-start;*/
+}
+
+footer .footer-link{
+    flex: 1;
+    display: flex;
+    padding: 0 1rem;
+    flex-direction: column;
+
+}
+
+
+@media only screen and (max-width: 1030px) {
+	.navBig a, .navBig .line{
+		visibility: hidden;
+	}
+
+	.navBig nav a:nth-child(1),
+	.navBig nav a:nth-child(2),
+	.navBig nav a:nth-child(3),
+	.navBig nav a:nth-child(4),
+	.navBig nav a:nth-child(5),
+	.navBig nav a:nth-child(6),
+	.navBig nav .line
+	{
+		display: none;
+	}
+	.navBig .orange .white .logo{
+		visibility: visible;
+		padding-left: 2.7rem;
+		width: 115px;
+		margin-top: -0.1rem;
+	}
+
+	.navBig .orange .login{
+		visibility: visible;
+		font-size: 1.25rem;
+width: 25%;
+padding: 0 4rem;
+
+
+
+	}
+
+	.navSmall{
+		display: block;
+	}
+}
