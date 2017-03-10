@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-wdith"/>
+    <link type ="text/css" rel="stylesheet" href="/static/css/footer.css">
+    <link type ="text/css" rel="stylesheet" href="/static/css/dashboard.css">
+    <!-- name should eventually come from the gauth item -->
+    <title>Welcome to RC3 name!</title>      
+</head>
+    <body>
+        <main>
+            <div class="dashboard">
+                <div class="sidebar">
+                    {% include 'dashboard/dnav.html' %}
+                </div>
+                <div class="content">
+                    {% include 'dashboard/dcontent.html' %}
+                </div>
+            </div>
+        </main> 
+        <footer>
+            {% include 'footer.html' %}
+        </footer>
+    </body.
+</html>

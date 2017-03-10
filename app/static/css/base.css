@@ -442,44 +442,6 @@ text-decoration: none;
 */
 /*Sometimes you just gotta make things beautiful*/
 
-/*footer css---------*/
-
-footer{
-    display: flex;
-    color: white;
-    background-color: #555;
-    justify-content: space-around;
-    padding: 5rem 2rem;
-    flex-wrap: wrap;
-}
-
-footer a, footer p{
-	color: white;
-	font-size: 14px;
-	font-weight: 300;
-}
-
-footer .logo{
-    width: 100px;
-	margin: 30px;
-    align-self: center;
-}
-
-footer .footer-links{
-    flex: 2;
-    display: flex;
-    flex-wrap: wrap;
-   /* justify-content: flex-start;*/
-}
-
-footer .footer-link{
-    flex: 1;
-    display: flex;
-    padding: 0 1rem;
-    flex-direction: column;
-
-}
-
 
 @media only screen and (max-width: 1030px) {
 	.navBig a, .navBig .line{
