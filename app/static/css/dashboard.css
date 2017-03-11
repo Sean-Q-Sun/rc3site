@@ -18,9 +18,15 @@ div.content {
 
 div.content div.dashContent {
     display: inline-block;
+    vertical-align: top;
     width: 45%;
     padding: 0;
     margin: 0;
+}
+
+/* this should change */
+div.content div#updates {
+    text-align: right;
 }
 
 @media screen and (max-width: 1000px) {
@@ -64,3 +70,12 @@ nav ul.navigation a {
     font-size: 2em;
     color: white;
 }    
+
+ul#flag_icons {
+    display: inline-block;
+    list-style: none;
+}
+
+ul#flag_icons li {
+    display: inline-block
+}
