@@ -29,3 +29,8 @@ def competitions():
 @app.route('/hall-of-fame')
 def hallOfFame():
 	return "Hall of Fame"
+
+# mostly here for testing purposes
+@app.route("/dashboard")
+def userDashboard():
+		return render_template("dashboard.html")
